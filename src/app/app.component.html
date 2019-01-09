@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span [routerLink]="['/']">PlatziOverflow</span>
+    <span class="example-spacer"></span>
+    <i class="material-icons" *ngIf="!isLogged()" [routerLink]="['/signin']">accessibility_new</i>
+    <div *ngIf="isLogged()">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item disabled>
+          <span>{{fullName()}}</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <span>Cerrar Sesión</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

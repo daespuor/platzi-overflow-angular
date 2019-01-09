@@ -1,0 +1,16 @@
+.icon{
+    font-size: 40px;
+}
+
+h2{
+    margin:0;
+}
+.answer-form{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    border-top: 1px solid #dcdcdc;
+}

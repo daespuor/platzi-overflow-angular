@@ -1,0 +1,26 @@
+.answers{
+    padding: 12px;
+}
+
+.answers-list{
+    padding: 0px;
+    list-style-type: none;
+    padding-bottom:160px;
+}
+
+h5{
+    margin-bottom: 0;
+}
+
+h5 small{
+    font-size: smaller;
+    color: rgba(0,0,0,.54);
+    font-weight: normal;
+}
+
+.description{
+    padding-left: 6px;
+    border-left: 2px solid #eee;
+    margin-top: 5px;
+    font-size: 14px;
+}

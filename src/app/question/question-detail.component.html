@@ -1,0 +1,19 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-card *ngIf="!loading">
+    <mat-card-header>
+        <div mat-card-avatar>
+            <i mat-list-icon class="{{question.icon}} icon"></i>
+        </div> 
+        <mat-card-title>
+            <h2>{{question.title}}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <small>Daniel Puerta - {{question.createdAt| amLocale:'es' | amTimeAgo}}</small>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{question.description}}</p>
+    </mat-card-content>
+</mat-card>
+<app-answers-list [answers]="question.answers" *ngIf="!loading"></app-answers-list>
+<app-answer-form class="answer-form" [question]="question"></app-answer-form>

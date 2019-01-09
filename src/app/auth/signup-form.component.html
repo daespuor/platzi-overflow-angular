@@ -1,0 +1,51 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input 
+        matInput 
+        placeholder="Nombres"
+        formControlName="firstName"
+        id="firstName"
+        >
+    </mat-form-field>
+    <mat-form-field>
+        <input 
+        matInput 
+        placeholder="Apellidos"
+        formControlName="lastName"
+        id="lastName"
+        >
+    </mat-form-field>
+    <mat-form-field>
+        <input 
+        matInput 
+        placeholder="Correo Electrónico"
+        formControlName="email"
+        id="email"
+        >
+    </mat-form-field>
+    <p *ngIf="passNotEqual">Las contraseñas deben coincidir</p>
+    <mat-form-field>
+        <input 
+        matInput 
+        placeholder="Contraseña"
+        formControlName="password"
+        id="password"
+        [type]="hide?'password':'text'">
+        <i class="material-icons" matSuffix (click)="hide=!hide">{{hide?'visibility':'visibility_off'}}</i>
+    </mat-form-field>
+    <mat-form-field>
+        <input
+            matInput
+            placeholder="Confirmar contraseña"
+            formControlName="passwordCheck"
+            id="passwordCheck"
+            [type]="checkhide?'password':'text'"
+        >
+        <i class="material-icons" matSuffix (click)="checkhide=!checkhide">{{checkhide?'visibility':'visibility_off'}}</i>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="accent">Registrarse</button>
+    <p style="text-align: center">
+        ¿Tiene un usuario?
+        <a [routerLink]="['/signin']">Iniciar sesión</a>
+    </p>
+</form>
